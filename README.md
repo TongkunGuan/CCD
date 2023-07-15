@@ -4,9 +4,9 @@ For more details, please refer to our [arxiv](https://arxiv.org/abs/2211.00288).
 Code will be released.
 
 ## Pipeline 
-<div style="align: center">
+<center>
 <img src=graph/pipeline.png width="600px">
-</div>
+</center>
 
 ## Model architecture
 ![examples](graph/network.png)
