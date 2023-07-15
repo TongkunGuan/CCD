@@ -50,10 +50,12 @@ pip install Pillow LMDB nltk six natsort scipy
   - [evaluation](https://github.com/FangShancheng/ABINet/README.md)
 
 ## Visualization
-![examples](graph/order.png)
-![examples](graph/SM_1.png)
-![examples](graph/SM_3.png)
-![examples](graph/SM_2.png)
+<div style="align: center">
+<img src=graph/order.png width="600px">
+<img src=graph/SM_1.png width="600px">
+<img src=graph/SM_3.png width="600px">
+<img src=graph/SM_2.png width="600px">
+</div>
 
 ### TODO
 - [ ] Release data
