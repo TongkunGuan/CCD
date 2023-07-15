@@ -3,6 +3,12 @@ This is the code of "Self-supervised Character-to-Character Distillation for Tex
 For more details, please refer to our [arxiv](https://arxiv.org/abs/2211.00288).
 Code will be released.
 
+## Pipeline 
+![examples](graph/pipeline.png)
+
+## Model architecture
+![examples](graph/network.png)
+
 ## Environments
 ```bash
 # 3090 Ubuntu 16.04 Cuda 11
@@ -40,6 +46,12 @@ pip install Pillow LMDB nltk six natsort scipy
 - **Dataset link:**
   - [Synth](https://github.com/FangShancheng/ABINet/README.md)
   - [evaluation](https://github.com/FangShancheng/ABINet/README.md)
+
+## Visualization
+![examples](graph/order.png)
+![examples](graph/SM_1.png)
+![examples](graph/SM_3.png)
+![examples](graph/SM_2.png)
 
 ### TODO
 - [ ] Release data
