@@ -1,7 +1,7 @@
 # Self-supervised Character-to-Character Distillation for Text Recognition (ICCV2023)
 This is the code of "Self-supervised Character-to-Character Distillation for Text Recognition". 
 For more details, please refer to our [arxiv](https://arxiv.org/abs/2211.00288).
-
+Code will be released.
 
 ## Environments
 ```bash
