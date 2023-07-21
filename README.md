@@ -1,7 +1,6 @@
 # Self-supervised Character-to-Character Distillation for Text Recognition （ICCV23）
 This is the code of "Self-supervised Character-to-Character Distillation for Text Recognition". 
 For more details, please refer to our [arxiv](https://arxiv.org/abs/2211.00288).
-Code will be released.
 
 ## Pipeline 
 <center>
@@ -14,17 +13,26 @@ Code will be released.
 ## Environments
 ```bash
 # 3090 Ubuntu 16.04 Cuda 11
-conda create -n SIGA python==3.7.0
-source activate SIGA
-pip install torch==1.10.1+cu111 torchvision==0.11.2+cu111 torchaudio==0.10.1 -f https://download.pytorch.org/whl/cu111/torch_stable.html
-pip install tensorboard==2.11.2
+conda create -n CCD python==3.7
+source activate CCD
+conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit=11.3 -c pytorch -c conda-forge
+pip install tensorboard==1.15.0
 pip install tensorboardX==2.2
-pip install opencv-python
-pip install Pillow LMDB nltk six natsort scipy
-# if you meet bug about setuptools
-# pip uninstall setuptools
-# pip install setuptools==58.0.4
+# The following optional dependencies are necessary
+pip install yaml opencv-python Pillow LMDB nltk six natsort scipy sklearn scikit-image matplotlib editdistance tqdm
+pip install fastai==1.0.60 imgaug==0.4.0
 ```
+
+## Pretrain
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 train.py --config ./Dino/configs/CCD_pretrain_ViT_xxx.yaml
+```
+## Finetune
+```bash
+#update model.pretrain_checkpoint in CCD_vision_model_xxx.yaml
+CUDA_VISIBLE_DEVICES=0,1 python train_finetune.py --config ./Dino/configs/CCD_vision_model_xxx.yaml
+```
+
 ## Data
 ```
     data_lmdb
@@ -77,12 +85,16 @@ pip install Pillow LMDB nltk six natsort scipy
             ├── WOST
             ├── MPSC
             └── WordArt
-    ```
+```
 
 ## Highlights
 - **Dataset link:**
-  - [Synth](https://github.com/FangShancheng/ABINet/README.md)
-  - [evaluation](https://github.com/FangShancheng/ABINet/README.md)
+  - Synth
+  - URD
+  - ARD
+  - validation
+  - evaluation
+  - Mask (optional, kmeans results of Synth and URD)
 
 ## Visualization
 <div style="align: center">
@@ -93,8 +105,8 @@ pip install Pillow LMDB nltk six natsort scipy
 </div>
 
 ### TODO
-- [ ] Release data
-- [ ] Release code
+- [ ] clean data
+- [ ] Release weights
 
 
 ## Citation

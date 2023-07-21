@@ -1,0 +1,88 @@
+global:
+  name: finetune_base_65536
+  phase: train
+  stage: train-supervised
+  workdir: workdir
+  seed: ~
+
+output_dir: './saved_models/'
+
+dataset:
+  scheme: supervised
+  type: ST
+  train: {
+    roots: [
+        'xxx/data_lmdb/training/label/Synth'
+    ],
+    batch_size: 224,
+  }
+  valid: {
+    roots: [
+        'xxx/data_lmdb/validation'
+    ],
+    batch_size: 224
+  }
+  test: {
+    roots: [
+        "xxx/data_lmdb/evaluation/benchmark/IIIT5k_3000",
+        "xxx/data_lmdb/evaluation/benchmark/SVT",
+        "xxx/data_lmdb/evaluation/benchmark/IC13_1015",
+        "xxx/data_lmdb/evaluation/benchmark/IC15_1811",
+        "xxx/data_lmdb/evaluation/benchmark/SVTP",
+        "xxx/data_lmdb/evaluation/benchmark/CUTE80",
+        "xxx/data_lmdb/evaluation/benchmark/COCOText",
+        "xxx/data_lmdb/evaluation/benchmark/CTW",
+        "xxx/data_lmdb/evaluation/benchmark/TotalText",
+        "xxx/data_lmdb/evaluation/benchmark/HOST",
+        "xxx/data_lmdb/evaluation/benchmark/WOST",
+    ],
+    batch_size: 224
+  }
+  data_aug: True
+  multiscales: False
+  mask: False
+  num_workers: 8
+  augmentation_severity: 0
+  charset_type: 'DICT90'
+
+training:
+  epochs: 10
+  start_iters: 0
+  show_iters: 1000
+  eval_iters: 2000
+  save_iters: 100000
+
+model:
+  pretrain_checkpoint: './saved_models/pre_base_65536/checkpoint.pth'
+  checkpoint:
+decoder:
+  type: 'NRTRDecoder'
+  n_layers: 6
+  d_embedding: 512
+  n_head: 8
+  d_model: 512
+  d_inner: 256
+  d_k: 64
+  d_v: 64
+  num_classes: 92
+  max_seq_len: 25
+  start_idx: 91
+  padding_idx: 92
+
+mp:
+  num: 4
+
+arch: 'vit_base'
+patch_size: 4
+out_dim: 65536
+weight_decay: 0.05
+clip_grad: ~
+lr: 0.0005
+warmup_epochs: 1
+min_lr: 0.000001
+optimizer: adamw
+drop_path_rate: 0.1
+seed: 0
+num_workers: 8
+
+

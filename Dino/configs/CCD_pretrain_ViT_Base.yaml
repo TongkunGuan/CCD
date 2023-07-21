@@ -1,0 +1,97 @@
+global:
+  name: pre_base_65536
+  phase: train
+  stage: pretrain-vision
+  workdir: workdir
+  seed: ~
+
+output_dir: './saved_models/'
+
+dataset:
+  scheme: selfsupervised_kmeans
+  type: ST
+  train: {
+    roots: [
+        'xxx/data_lmdb/training/label/Synth',
+        'xxx/data_lmdb/training/URD/OCR-CC',
+    ],
+  }
+  valid: {
+    roots: [
+        'xxx/data_lmdb/validation',
+    ],
+  }
+  test: {
+    roots: [
+        'xxx/data_lmdb/evaluation/benchmark',
+        'xxx/data_lmdb/evaluation/addition',
+    ],
+  }
+  data_aug: True
+  multiscales: False
+  mask: True
+  num_workers: 8
+  augmentation_severity: 5
+  charset_path: './Dino/data/charset_36.txt'
+  mask_path: 'xxx/data_lmdb/Mask'
+
+training:
+  epochs: 3
+  start_iters: 0
+  show_iters: 200
+  eval_iters: 3000
+  save_iters: 50000
+
+model:
+  name: 'Dino.model.dino_vision.ABIDINOModel'
+  seg_channel: 512
+  checkpoint: ~
+
+mp:
+  num: 4
+
+arch: 'vit_base'
+patch_size: 4
+out_dim: 65536
+#Not normalizing leads to better performance but can make the training unstable.
+#In our experiments, we typically set this paramater to False with vit_small and True with vit_base."""
+norm_last_layer: True
+#We recommend setting a higher value with small batches: for example use 0.9995 with batch size of 256.
+momentum_teacher: 0.9995
+#Initial value for the teacher temperature: 0.04 works well in most cases.
+#Try decreasing it if the training loss does not decrease.
+warmup_teacher_temp: 0.04
+#We recommend starting with the default value of 0.04 and increase this slightly if needed.
+teacher_temp: 0.04
+#Number of warmup epochs for the teacher temperature (Default: 30).
+warmup_teacher_temp_epochs: 0
+batch_size_per_gpu: 48
+#The learning rate is linearly scaled with the batch size, and specified here for a reference batch size of 256.
+lr: 0.0005
+#Clipping with norm .3 ~ 1.0 can help optimization for larger ViT architectures.
+clip_grad: 3.0
+use_bn_in_head: False
+use_fp16: False
+weight_decay: 0.04
+weight_decay_end: 0.4
+epochs: 100
+freeze_last_layer: 1
+warmup_epochs: 10
+min_lr: 0.000001
+optimizer: adamw
+drop_path_rate: 0.1
+global_crops_scale: (0.4, 1.)
+local_crops_number: 8
+crops_number: 2
+local_crops_scale: (0.05, 0.4)
+seed: 0
+num_workers: 12
+dist_url: "env://"
+local_rank: 0
+saveckp_freq: 10
+
+warmup_epoch: 10
+imgnet_based: 1000000
+
+
+
