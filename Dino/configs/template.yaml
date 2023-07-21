@@ -1,0 +1,76 @@
+global:
+  name: exp
+  phase: train
+  stage: pretrain-vision
+  workdir: workdir
+  seed: ~
+  debug: False
+
+dataset:
+  scheme: 'supervised'
+  type: 'ST'
+  train: {
+    roots: [
+        'data/training/label/real',
+    ],
+    batch_size: 128,
+    weights: ~,
+  }
+  valid: {
+    roots: [
+        'data/validation',
+    ],
+    batch_size: 128
+  }
+  test: {
+    roots: [
+        'data/evaluation/benchmark',
+        'data/evaluation/addition',
+    ],
+    batch_size: 128
+  }
+  portion: 1.0
+  charset_path: data/charset_36.txt
+  num_workers: 4
+  max_length: 25
+  image_height: 32
+  image_width: 128
+  case_sensitive: False
+  eval_case_sensitive: False
+  data_aug: True
+  multiscales: False
+  pin_memory: True
+  smooth_label: False
+  smooth_factor: 0.1
+  use_sm: False
+  mask: False
+  filter_single_punctuation: False
+
+training:
+  epochs: 6
+  show_iters: 50
+  eval_iters: 3000
+  save_iters: 20000
+  start_iters: 0
+  stats_iters: 1000
+  hist_iters: 10000000
+
+optimizer:
+  type: Adam
+  true_wd: False
+  wd: 0.0
+  bn_wd: False
+  clip_grad: 20
+  lr: 0.0001
+  args: {
+    betas: !!python/tuple [ 0.9, 0.999 ], # for default Adam
+  }
+  scheduler: {
+    periods: [ 3, 1, 1 ],
+    gamma: 0.1,
+  }
+
+model:
+  name: 'semimtr.modules.model_abinet.ABINetModel'
+  checkpoint: ~
+  strict: True
