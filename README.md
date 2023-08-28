@@ -2,6 +2,8 @@
 This is the code of "Self-supervised Character-to-Character Distillation for Text Recognition". 
 For more details, please refer to our [arxiv](https://arxiv.org/abs/2211.00288).
 
+[中文解读](https://zhuanlan.zhihu.com/p/644350078)
+
 ## Pipeline 
 <center>
 <img src=graph/pipeline.png width="600px">
