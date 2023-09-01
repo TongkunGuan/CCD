@@ -81,7 +81,7 @@ def train(config):
         print(f"Unknow architecture: {config.arch}")
 
     # multi-crop wrapper handles forward with inputs of different resolutions
-    student = (
+    student = ABIDINOModel(
         student,
         SegHead(in_channels=config.model_seg_channel, mla_channels=128, mlahead_channels=64, num_classes=2),
         DINOHead(embed_dim, config.out_dim, use_bn=config.use_bn_in_head, norm_last_layer=config.norm_last_layer, ))
