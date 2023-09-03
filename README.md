@@ -107,7 +107,6 @@ run merge.py #merge multiple lmdb files into single file
 </div>
 
 ### TODO
-- [ ] clean data
 - [ ] Release weights
 
 
