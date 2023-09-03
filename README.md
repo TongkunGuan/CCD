@@ -90,13 +90,13 @@ CUDA_VISIBLE_DEVICES=0,1 python train_finetune.py --config ./Dino/configs/CCD_vi
 ```
 
 ## Highlights
-- **Dataset link:**
-  - Synth
-  - URD
-  - ARD
-  - validation
-  - evaluation
-  - Mask (optional, kmeans results of Synth and URD)
+- **Mask preparation:**
+  - optional, kmeans results of Synth and URD
+```bash
+cd ./mask_create
+run generate_mask.py #parallelly process mask --> lmdb file
+run merge.py #merge multiple lmdb files into single file
+```
 
 ## Visualization
 <div style="align: center">
