@@ -89,8 +89,7 @@ CUDA_VISIBLE_DEVICES=0,1 python train_finetune.py --config ./Dino/configs/CCD_vi
             └── WordArt
 ```
 
-## Highlights
-- **Mask preparation:**
+## Mask preparation
   - optional, kmeans results of Synth and URD
 ```bash
 cd ./mask_create
