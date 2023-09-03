@@ -35,7 +35,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node
 CUDA_VISIBLE_DEVICES=0,1 python train_finetune.py --config ./Dino/configs/CCD_vision_model_xxx.yaml
 ```
 
-## Data
+## Data (please refers to [DiG](https://github.com/ayumiymk/DiG))
 ```
     data_lmdb
     ├── charset_36.txt
@@ -97,7 +97,6 @@ CUDA_VISIBLE_DEVICES=0,1 python train_finetune.py --config ./Dino/configs/CCD_vi
   - validation
   - evaluation
   - Mask (optional, kmeans results of Synth and URD)
-  please refers to [DiG](https://github.com/ayumiymk/DiG)
 
 ## Visualization
 <div style="align: center">
