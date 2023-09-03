@@ -97,6 +97,7 @@ CUDA_VISIBLE_DEVICES=0,1 python train_finetune.py --config ./Dino/configs/CCD_vi
   - validation
   - evaluation
   - Mask (optional, kmeans results of Synth and URD)
+  please refers to [DiG](https://github.com/ayumiymk/DiG)
 
 ## Visualization
 <div style="align: center">
