@@ -82,7 +82,7 @@ class ImageDatasetSelfSupervisedKmeans(ImageDataset):
             image_view = self.totensor(self.resize(image_view))
             image_view = TF.normalize(image_view, self.mean, self.std)
             image_views.append(image_view)
-        mask_view = cv2.resize(mask.astype(np.float32), (self.img_w, self.img_h))
+        mask_view = cv2.resize(np.array(mask).astype(np.float32), (self.img_w, self.img_h))
         mask_view = (mask_view >= 0.5).astype(np.float32)
         return np.stack(image_views, axis=0), mask_view, np.array(theta, dtype=np.float32)
 

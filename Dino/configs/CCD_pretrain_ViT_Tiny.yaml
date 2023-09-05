@@ -12,19 +12,24 @@ dataset:
   type: ST
   train: {
     roots: [
-        'xxx/data_lmdb/training/label/Synth/',
-        'xxx/data_lmdb/training/URD/OCR-CC',
+#        'xxx/data_lmdb/training/label/Synth/',
+#        'xxx/data_lmdb/training/URD/OCR-CC',
+        '/data_hdd/users/guantongkun/dataset/data_lmdb/training/label/Synth/',
+        '/data_hdd/users/guantongkun/dataset/data_lmdb/training/URD/OCR-CC',
     ],
   }
   valid: {
     roots: [
-        'xxx/data_lmdb/validation',
+#        'xxx/data_lmdb/validation',
+        '/data_hdd/users/guantongkun/dataset/data_lmdb/validation',
     ],
   }
   test: {
     roots: [
-        'xxx/data_lmdb/evaluation/benchmark',
-        'xxx/data_lmdb/evaluation/addition',
+      '/data_hdd/users/guantongkun/dataset/data_lmdb/evaluation/benchmark',
+      '/data_hdd/users/guantongkun/dataset/data_lmdb/evaluation/addition',
+#        'xxx/data_lmdb/evaluation/benchmark',
+#        'xxx/data_lmdb/evaluation/addition',
     ],
   }
   data_aug: True
@@ -33,7 +38,7 @@ dataset:
   num_workers: 16
   augmentation_severity: 5
   charset_path: './Dino/data/charset_36.txt'
-  mask_path: 'xxx/data_lmdb/Mask/'
+  mask_path: '/data_hdd/users/guantongkun/dataset/data_lmdb/Mask1/' #'xxx/data_lmdb/Mask/'
 
 training:
   epochs: 3
