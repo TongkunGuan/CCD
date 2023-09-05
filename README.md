@@ -27,6 +27,7 @@ pip install fastai==1.0.60 imgaug==0.4.0
 
 ## Pretrain
 ```bash
+# We recommend using multiple 3090s for training.
 CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 train.py --config ./Dino/configs/CCD_pretrain_ViT_xxx.yaml
 ```
 ## Finetune
