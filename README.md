@@ -91,6 +91,8 @@ CUDA_VISIBLE_DEVICES=0,1 python train_finetune.py --config ./Dino/configs/CCD_vi
 
 ## Mask preparation
   - optional, kmeans results of Synth and URD
+  - if you don't want to generate mask, you can generate mask results online. 
+     please rewrite [code1](https://github.com/TongkunGuan/CCD/blob/main/Dino/dataset/dataset.py#L133) and [code2](https://github.com/TongkunGuan/CCD/blob/main/Dino/dataset/datasetsupervised_kmeans.py#L48)
 ```bash
 cd ./mask_create
 run generate_mask.py #parallelly process mask --> lmdb file
