@@ -19,8 +19,7 @@ conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit
 pip install tensorboard==1.15.0
 pip install tensorboardX==2.2
 # The following optional dependencies are necessary
-pip install yaml opencv-python Pillow LMDB nltk six natsort scipy sklearn scikit-image matplotlib editdistance tqdm
-pip install fastai==1.0.60 imgaug==0.4.0
+please refer to requirement.txt
 ```
 
 ## Pretrain
