@@ -112,14 +112,13 @@ run merge.py #merge multiple lmdb files into single file
 ## Citation
 ```bash
 If you find our method useful for your reserach, please cite
-
-@misc{guan2023selfsupervised,
-      title={Self-supervised Character-to-Character Distillation for Text Recognition}, 
-      author={Tongkun Guan and Wei Shen and Xue Yang and Qi Feng and Zekun Jiang and Xiaokang Yang},
-      year={2023},
-      eprint={2211.00288},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@InProceedings{Guan_2023_ICCV,
+    author    = {Guan, Tongkun and Shen, Wei and Yang, Xue and Feng, Qi and Jiang, Zekun and Yang, Xiaokang},
+    title     = {Self-Supervised Character-to-Character Distillation for Text Recognition},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2023},
+    pages     = {19473-19484}
 }
 ```
 ## License
