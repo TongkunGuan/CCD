@@ -38,7 +38,7 @@ CUDA_VISIBLE_DEVICES=0,1 python train_finetune.py --config ./Dino/configs/CCD_vi
 CUDA_VISIBLE_DEVICES=0 python test.py --config ./Dino/configs/CCD_vision_model_xxx.yaml
 ```
 ## Weights
-- Pretrain: [CCD-ViT-Small]() Finetune: [ARD]() and [STD]()
+- Pretrain: [CCD-ViT-Small](https://drive.google.com/file/d/1oQGB0tGLDK6TNOb-o1zytAnM_BldmOwM/view?usp=sharing) Finetune: [ARD]() and [STD]()
 - Since the server is under maintenance, CCD-ViT-Base will be released soon.
 <!-- | Data     | IIIT | SVT | IC13 | IC15 | SVTP | CUTE | COCO |  CTW |   TT | HOST | WOST |
 |----------|------|-----|------|------|------|------|------|------|------|------|------|
