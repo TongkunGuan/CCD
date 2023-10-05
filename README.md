@@ -34,7 +34,10 @@ CUDA_VISIBLE_DEVICES=0,1 python train_finetune.py --config ./Dino/configs/CCD_vi
 ```
 ## Weights
 - pretrain: [CCD-ViT-Small]()
-- Finetune: [STD]() and [ARD]()
+| Weights | Data     | IIIT | SVT | IC13 | IC15 | SVTP | CUTE | COCO |  CTW |   TT | HOST | WOST |
+|---------|----------|------|-----|------|------|------|------|------|------|------|------|------|
+|[STD]()| STD |96.8 | 94.4 | 96.6 | 87.3 | 91.3 | 92.4 | 64.7 | 80.4 | 82.1 | 77.9 | 85.8 |
+|[ARD]()| ARD |98.0 | 96.4 | 98.3 | 90.3 | 92.7 | 98.3 | 76.7 | 86.5 | 91.3 | 77.3 | 86.0 |
 
 ## Data (please refer to [DiG](https://github.com/ayumiymk/DiG))
 ```
