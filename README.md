@@ -33,8 +33,8 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node
 CUDA_VISIBLE_DEVICES=0,1 python train_finetune.py --config ./Dino/configs/CCD_vision_model_xxx.yaml
 ```
 ## Weights
-pretrain: [CCD-ViT-Small]()
-Finetune: [STD]() and [ARD]()
+- pretrain: [CCD-ViT-Small]()
+- Finetune: [STD]() and [ARD]()
 
 ## Data (please refer to [DiG](https://github.com/ayumiymk/DiG))
 ```
