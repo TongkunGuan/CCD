@@ -32,6 +32,9 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node
 #update model.pretrain_checkpoint in CCD_vision_model_xxx.yaml
 CUDA_VISIBLE_DEVICES=0,1 python train_finetune.py --config ./Dino/configs/CCD_vision_model_xxx.yaml
 ```
+##weights
+pretrain: [CCD-ViT-Small]()
+Finetune: [STD]() and [ARD]()
 
 ## Data (please refer to [DiG](https://github.com/ayumiymk/DiG))
 ```
@@ -105,8 +108,6 @@ run merge.py #merge multiple lmdb files into single file
 <img src=graph/SM_2.png width="800px">
 </div>
 
-### TODO
-- [ ] Release weights
 
 
 ## Citation
