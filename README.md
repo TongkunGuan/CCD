@@ -39,14 +39,13 @@ CUDA_VISIBLE_DEVICES=0 python test.py --config ./Dino/configs/CCD_vision_model_x
 ```
 ## Weights
 - Pretrain: [CCD-ViT-Small]() Finetune: [ARD]() and [STD]()
-
-<!-- | Weights | Data     | IIIT | SVT | IC13 | IC15 | SVTP | CUTE | COCO |  CTW |   TT | HOST | WOST |
-|---------|----------|------|-----|------|------|------|------|------|------|------|------|------|
-|[STD]()| STD |96.8 | 94.4 | 96.6 | 87.3 | 91.3 | 92.4 | 64.7 | 80.4 | 82.1 | 77.9 | 85.8 |
-|[ARD]()| ARD |98.0 | 96.4 | 98.3 | 90.3 | 92.7 | 98.3 | 76.7 | 86.5 | 91.3 | 77.3 | 86.0 | -->
+<!-- | Data     | IIIT | SVT | IC13 | IC15 | SVTP | CUTE | COCO |  CTW |   TT | HOST | WOST |
+|----------|------|-----|------|------|------|------|------|------|------|------|------|
+| STD |96.8 | 94.4 | 96.6 | 87.3 | 91.3 | 92.4 | 64.7 | 80.4 | 82.1 | 77.9 | 85.8 |
+| ARD |98.0 | 96.4 | 98.3 | 90.3 | 92.7 | 98.3 | 76.7 | 86.5 | 91.3 | 77.3 | 86.0 | -->
 
 <!-- - pretrain: [CCD-ViT-Base]()
-|[ARD]()| ARD |98.0 | 97.4 | 98.2 | 91.4 | 96.0 | 98.3 | 79.0 | 87.7 | 92.4 | 82.2 | 88.3 | -->
+path: /data/TongkunGuan/SSL/DinoSTR_v6/saved_models/base_ARD_65536_aug_aug_6_lb_update/ -->
 
 ## Data (please refer to [DiG](https://github.com/ayumiymk/DiG))
 ```
