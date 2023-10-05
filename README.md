@@ -32,6 +32,11 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node
 #update model.pretrain_checkpoint in CCD_vision_model_xxx.yaml
 CUDA_VISIBLE_DEVICES=0,1 python train_finetune.py --config ./Dino/configs/CCD_vision_model_xxx.yaml
 ```
+## Test
+```bash
+#update model.checkpoint in CCD_vision_model_xxx.yaml
+CUDA_VISIBLE_DEVICES=0 python test.py --config ./Dino/configs/CCD_vision_model_xxx.yaml
+```
 ## Weights
 - pretrain: [CCD-ViT-Small]()
 
