@@ -44,15 +44,15 @@ CUDA_VISIBLE_DEVICES=0 python test.py --config ./Dino/configs/CCD_vision_model_x
 ```
 ## Weights
 - Pretrain: [CCD-ViT-Small](https://drive.google.com/file/d/1oQGB0tGLDK6TNOb-o1zytAnM_BldmOwM/view?usp=drive_link) Finetune: [ARD](https://drive.google.com/file/d/1CoG0iHmMMs7aQqmM_qilql6YzsGm3096/view?usp=drive_link) and [STD](https://drive.google.com/file/d/1MPX5sKGTftYO5rJwseWWjTcm6KU3UrVA/view?usp=drive_link)
-- Since the server is under maintenance, CCD-ViT-Base will be released soon.
+<!-- - Since the server is under maintenance, CCD-ViT-Base will be released soon. -->
 <!-- | Data     | IIIT | SVT | IC13 | IC15 | SVTP | CUTE | COCO |  CTW |   TT | HOST | WOST |
 |----------|------|-----|------|------|------|------|------|------|------|------|------|
 | STD |96.8 | 94.4 | 96.6 | 87.3 | 91.3 | 92.4 | 64.7 | 80.4 | 82.1 | 77.9 | 85.8 |
 | ARD |98.0 | 96.4 | 98.3 | 90.3 | 92.7 | 98.3 | 76.7 | 86.5 | 91.3 | 77.3 | 86.0 | -->
 
-<!-- - pretrain: [CCD-ViT-Base]()
-path: /data/TongkunGuan/SSL/DinoSTR_v6/saved_models/base_ARD_65536_aug_aug_6_lb_update/ -->
-
+- pretrain: [CCD-ViT-Base](https://jbox.sjtu.edu.cn/v/link/view/d6e2ea9a29cc42d389425dacac14d59a) Finetune:[ARD](https://jbox.sjtu.edu.cn/v/link/view/26a74105eb254b2598a0fc118a70063b) and [STD](https://jbox.sjtu.edu.cn/v/link/view/6a754e411560413a857226dcc82687fa)
+<!-- path: /data/TongkunGuan/SSL/DinoSTR_v6/saved_models/base_ARD_65536_aug_aug_6_lb_update/
+path: /home/xyw/sjtu/GuanTongkun/SSL/DinoSTR_v6/saved_models/base_65536_aug_aug_6_STD_update/ -->
 ## Data (please refer to [DiG](https://github.com/ayumiymk/DiG))
 ```
     data_lmdb
