@@ -54,6 +54,11 @@ CUDA_VISIBLE_DEVICES=0 python test.py --config ./Dino/configs/CCD_vision_model_x
 <!-- path: /data/TongkunGuan/SSL/DinoSTR_v6/saved_models/base_ARD_65536_aug_aug_6_lb_update/
 path: /home/xyw/sjtu/GuanTongkun/SSL/DinoSTR_v6/saved_models/base_65536_aug_aug_6_STD_update/ -->
 ## Data (please refer to [DiG](https://github.com/ayumiymk/DiG))
+OCR-CC Link: 
+```
+链接：https://pan.baidu.com/s/1PW7ef17AkwG27H_RaP0pDQ 
+提取码：C2CD 
+```
 ```
     data_lmdb
     ├── charset_36.txt
