@@ -21,10 +21,10 @@ We also released CVPR23 work on scene text recognition:
 conda create -n CCD python==3.7
 source activate CCD
 conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit=11.3 -c pytorch -c conda-forge
-pip install tensorboard==1.15.0
-pip install tensorboardX==2.2
 # The following optional dependencies are necessary
 please refer to requirement.txt
+pip install tensorboard==1.15.0
+pip install tensorboardX==2.2
 ```
 
 ## Pretrain
