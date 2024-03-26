@@ -49,8 +49,8 @@ class ABIDINOModel(nn.Module):
         return attn_vecs, index
 
     def forward(self, x, metrics, target_mask, epoch, clusters=None, index=None):
-        x1 = x[:, 0]
-        x2 = x[:, 1]
+        x1 = x[:, 1]
+        x2 = x[:, 2]
         backbone_out, Segmentation_input = self.backbone(torch.cat([x1, x2]))
         N, T, E = backbone_out.shape
         region_f = backbone_out.reshape(N, 8, 32, E).permute(0, 3, 1, 2)
