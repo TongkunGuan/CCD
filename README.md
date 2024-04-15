@@ -126,7 +126,6 @@ run merge.py #merge multiple lmdb files into single file
 <div style="align: center">
 <img src=graph/order.png width="800px">
 <img src=graph/SM_1.png width="800px">
-<img src=graph/SM_3.png width="800px">
 <img src=graph/SM_2.png width="800px">
 </div>
 
