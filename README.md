@@ -122,13 +122,6 @@ run generate_mask.py #parallelly process mask --> lmdb file
 run merge.py #merge multiple lmdb files into single file
 ```
 
-## Visualization
-<div style="align: center">
-<img src=graph/order.png width="800px">
-<img src=graph/SM_1.png width="800px">
-<img src=graph/SM_2.png width="800px">
-</div>
-
 
 
 ## Citation
