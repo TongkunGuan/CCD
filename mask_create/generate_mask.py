@@ -113,15 +113,17 @@ for path in datasets:
         nSamples = int(txn.get("num-samples".encode()))
     num_p = 36
     sub_num = nSamples // num_p
-    p = Pool(num_p)
-    args = []
-    for i in range(num_p):
-        if i == num_p -1:
-            args.append((i, sub_num * i + 1, nSamples, path))
-        else:
-            args.append((i, sub_num * i + 1, sub_num * (i + 1) + 1, path))
-    for arg in args:
-        p.apply_async(write_lmdb, arg)
+    with Pool(num_p) as p:
+        args = []
+        for i in range(num_p):
+            if i == num_p - 1:
+                args.append((i, sub_num * i + 1, nSamples, path))
+            else:
+                args.append((i, sub_num * i + 1, sub_num * (i + 1) + 1, path))
+        for arg in args:
+            p.apply_async(write_lmdb, arg)
+        p.close()  # 关闭进程池，不再接受新任务
+        p.join()  # 等待所有子进程结束
 
 print('process end')
 
